@@ -1,0 +1,86 @@
+﻿@model IEnumerable<GunSafety2.Models.Rifle>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*<h2>Index</h2>*@
+<br/>
+
+<p>
+    @Html.ActionLink("SIGN UP HERE.", "Create", null, new { Style = "color:White;font-size:large" })
+</p>
+<h4 style="color:white;font-weight:bolder">RIFLE</h4>
+<hr />
+    <table class="table" style="background-color:white">
+        <tr>
+            <th style="border: 1px solid black; text-align: left; width: 20%; padding-left: 20px;">
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th style="border: 1px solid black; text-align: left; width: 20%; padding-left: 20px;">
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th style="border: 1px solid black; text-align: left; width: 20%; padding-left: 20px;">
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th style="border: 1px solid black; text-align: left; width: 20%; padding-left: 20px;">
+                @Html.DisplayNameFor(model => model.City)
+            </th>
+            <th style="border: 1px solid black; text-align: left; width: 20%; padding-left: 20px;">
+                @Html.DisplayNameFor(model => model.State)
+            </th>
+            <th style="border: 1px solid black; text-align: left; width: 20%; padding-left: 20px;">
+                @Html.DisplayNameFor(model => model.ZipCode)
+            </th>
+            <th style="border: 1px solid black; text-align: left; width: 20%; padding-left: 20px;">
+                @Html.DisplayNameFor(model => model.Phone)
+            </th>
+            <th style="border: 1px solid black; text-align: left; width: 20%; padding-left: 20px;">
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th style="border: 1px solid black; text-align: left; width: 20%; padding-left: 20px;">
+                @Html.DisplayNameFor(model => model.CourseDate)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td style="padding-left: 20px;">
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+                <td style="padding-left: 20px;">
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+                <td style="padding-left: 20px;">
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+                <td style="padding-left: 20px;">
+                    @Html.DisplayFor(modelItem => item.City)
+                </td>
+                <td style="padding-left: 20px;">
+                    @Html.DisplayFor(modelItem => item.State)
+                </td>
+                <td style="padding-left: 20px;">
+                    @Html.DisplayFor(modelItem => item.ZipCode)
+                </td>
+                <td style="padding-left: 20px;">
+                    @Html.DisplayFor(modelItem => item.Phone)
+                </td>
+                <td style="padding-left: 20px;">
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td style="padding-left: 20px;">
+                    @Html.DisplayFor(modelItem => item.CourseDate)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.StudentID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.StudentID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.StudentID })
+                </td>
+            </tr>
+        }
+
+    </table>
